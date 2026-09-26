@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Hồ sơ học tập của Nguyễn Thị Thảo Nguyên, sinh viên lớp CT005, cùng ba sản phẩm về lợi ích của công nghệ số.">
+	<title>Nguyễn Thị Thảo Nguyên | Hồ sơ học tập CT005</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			color-scheme: light;
+			--ink: #172d29;
+			--muted: #65736d;
+			--paper: #f4f6f1;
+			--surface: #ffffff;
+			--green: #126b53;
+			--lime: #d6f06b;
+			--coral: #f18c70;
+			--line: #dce4db;
+		}
+
+		* { box-sizing: border-box; }
+
+		html { scroll-behavior: smooth; }
+
+		body {
+			margin: 0;
+			background: var(--paper);
+			color: var(--ink);
+			font-family: "DM Sans", "Segoe UI", sans-serif;
+			line-height: 1.6;
+		}
+
+		header {
+			padding: 3.75rem max(1.25rem, calc((100% - 1080px) / 2)) 3.5rem;
+			background: var(--green);
+			color: #fff;
+			position: relative;
+			isolation: isolate;
+			overflow: hidden;
+		}
+
+		header::after {
+			position: absolute;
+			z-index: -1;
+			right: max(1.25rem, calc((100% - 1080px) / 2));
+			bottom: -4.5rem;
+			width: 15rem;
+			aspect-ratio: 1;
+			border: 1px solid rgb(255 255 255 / 17%);
+			border-radius: 50%;
+			box-shadow: 0 0 0 2.2rem rgb(255 255 255 / 5%), 0 0 0 4.4rem rgb(255 255 255 / 4%);
+			content: "";
+			pointer-events: none;
+		}
+
+		.hero-inner {
+			display: grid;
+			grid-template-columns: minmax(0, 1.5fr) minmax(240px, .7fr);
+			align-items: end;
+			gap: 3rem;
+			max-width: 1080px;
+			margin: 0 auto;
+		}
+
+		.hero-copy { max-width: 680px; }
+
+		.hero-label {
+			display: inline-flex;
+			align-items: center;
+			gap: .55rem;
+			margin-bottom: 1.2rem;
+			color: var(--lime);
+			font-size: .76rem;
+			font-weight: 700;
+			letter-spacing: .11em;
+			text-transform: uppercase;
+		}
+
+		.hero-label::before {
+			width: .48rem;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			background: var(--coral);
+			content: "";
+		}
+
+		.eyebrow {
+			margin: 0 0 .85rem;
+			color: var(--lime);
+			font-size: .8rem;
+			font-weight: 700;
+			letter-spacing: .12em;
+			text-transform: uppercase;
+		}
+
+		h1 {
+			margin: 0;
+			font-family: "Fraunces", Georgia, serif;
+			font-size: 4rem;
+			font-weight: 500;
+			line-height: 1.04;
+			letter-spacing: 0;
+		}
+
+		.hero-intro {
+			max-width: 560px;
+			margin: 1.2rem 0 0;
+			color: rgb(255 255 255 / 82%);
+			font-size: 1.02rem;
+		}
+
+		.profile-details {
+			display: grid;
+			gap: 1rem;
+			margin: 0;
+			padding: 1.4rem 1.5rem;
+			border: 1px solid rgb(255 255 255 / 24%);
+			border-radius: 5px;
+			background: rgb(4 48 37 / 28%);
+			backdrop-filter: blur(4px);
+		}
+
+		.profile-details div { display: grid; gap: .15rem; }
+		.profile-details dt { color: rgb(255 255 255 / 68%); font-size: .78rem; }
+		.profile-details dd { margin: 0; font-size: 1.05rem; font-weight: 700; }
+
+		main {
+			max-width: 1080px;
+			margin: 0 auto;
+			padding: 3.25rem 1.25rem 4rem;
+		}
+
+		.section-heading {
+			display: flex;
+			align-items: end;
+			justify-content: space-between;
+			gap: 1.5rem;
+			padding-bottom: 1.2rem;
+			border-bottom: 1px solid var(--line);
+		}
+
+		.section-kicker {
+			margin: 0 0 .25rem;
+			color: var(--green);
+			font-size: .76rem;
+			font-weight: 700;
+			letter-spacing: .1em;
+			text-transform: uppercase;
+		}
+
+		.collection-count {
+			flex: 0 0 auto;
+			margin: 0 0 .3rem;
+			color: var(--muted);
+			font-size: .85rem;
+		}
+
+		.products {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			align-items: start;
+			gap: 1rem;
+			margin-top: 1.5rem;
+		}
+
+		.product {
+			min-width: 0;
+			padding: 1.1rem;
+			border: 1px solid var(--line);
+			border-radius: 5px;
+			background: var(--surface);
+			animation: rise-in .55s both;
+		}
+
+		.product:nth-child(2) { animation-delay: .08s; }
+		.product:nth-child(3) { animation-delay: .16s; }
+
+		.product-topline {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: .75rem;
+			margin-bottom: .5rem;
+		}
+
+		.product-number {
+			color: var(--green);
+			font-size: .76rem;
+			font-weight: 700;
+			letter-spacing: .08em;
+		}
+
+		.product-type {
+			padding: .18rem .5rem;
+			border-radius: 3px;
+			background: #edf4e7;
+			color: var(--green);
+			font-size: .7rem;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		h2 {
+			margin: 0;
+			font-size: 1.22rem;
+			line-height: 1.3;
+		}
+
+		.section-note {
+			min-height: 2.8em;
+			margin: .4rem 0 1rem;
+			color: var(--muted);
+			font-size: .92rem;
+		}
+
+		.frame {
+			overflow: hidden;
+			background: #edf1ec;
+			border: 1px solid var(--line);
+			border-radius: 3px;
+		}
+
+		.frame iframe {
+			display: block;
+			width: 100%;
+			border: 0;
+		}
+
+		.pdf iframe { height: 440px; }
+		.png iframe { height: 340px; }
+		.video iframe {
+			width: min(100%, 280px);
+			aspect-ratio: 9 / 16;
+			max-height: 440px;
+			margin: 0 auto;
+		}
+
+		.fallback {
+			display: flex;
+			margin: 1rem 0 0;
+		}
+
+		.fallback a {
+			color: var(--green);
+			font-size: .88rem;
+			font-weight: 700;
+			text-decoration-thickness: 1px;
+			text-underline-offset: 3px;
+		}
+
+		.fallback a:hover { color: #b54b36; }
+
+		@keyframes rise-in {
+			from { opacity: 0; transform: translateY(12px); }
+			to { opacity: 1; transform: translateY(0); }
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			html { scroll-behavior: auto; }
+			.product { animation: none; }
+		}
+
+		footer {
+			padding: 1.5rem 1.25rem;
+			border-top: 1px solid var(--line);
+			color: var(--muted);
+			text-align: center;
+			font-size: .88rem;
+		}
+
+		footer p { margin: .25rem 0; }
+
+		@media (max-width: 900px) {
+			.products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+			.product:last-child { grid-column: 1 / -1; }
+			.video iframe { max-height: 520px; }
+		}
+
+		@media (max-width: 680px) {
+			header { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+			.hero-inner { grid-template-columns: 1fr; gap: 1.75rem; }
+			h1 { font-size: 3rem; }
+			.profile-details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+			main { padding-top: 2.5rem; }
+			.section-heading { align-items: start; flex-direction: column; gap: .35rem; }
+			.products { grid-template-columns: 1fr; }
+			.product:last-child { grid-column: auto; }
+			.pdf iframe { height: 60vh; min-height: 380px; }
+			.png iframe { height: 420px; }
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="hero-inner">
+			<div class="hero-copy">
+				<p class="hero-label">Hồ sơ học tập <span>·</span> CT005</p>
+				<h1>Nguyễn Thị<br>Thảo Nguyên</h1>
+				<p class="hero-intro">Sinh viên lớp học phần CT005. Trang này giới thiệu bản thân và lưu lại ba sản phẩm học tập về lợi ích của công nghệ số.</p>
+			</div>
+			<dl class="profile-details">
+				<div><dt>Họ và tên</dt><dd>Nguyễn Thị Thảo Nguyên</dd></div>
+				<div><dt>Mã số sinh viên</dt><dd>B2605291</dd></div>
+				<div><dt>Lớp học phần</dt><dd>CT005</dd></div>
+			</dl>
+		</div>
+	</header>
+
+	<main>
+		<section aria-labelledby="products-title">
+			<div class="section-heading">
+				<div>
+					<p class="section-kicker">Bộ sưu tập</p>
+					<h2 id="products-title">Sản phẩm đã thực hiện</h2>
+				</div>
+				<p class="collection-count">03 sản phẩm <span aria-hidden="true">·</span> Công nghệ số</p>
+			</div>
+			<div class="products">
+				<article class="product" aria-labelledby="pdf-title">
+					<div class="product-topline"><span class="product-number">01</span><span class="product-type">Tài liệu</span></div>
+					<h2 id="pdf-title">Tài liệu PDF</h2>
+					<p class="section-note">Tài liệu trình bày nội dung chi tiết.</p>
+					<div class="frame pdf">
+						<iframe
+							src="https://drive.google.com/file/d/1GchymXNKvLDW8uazP6pxFSfaqoCZRyeu/preview"
+							title="Tài liệu PDF về lợi ích công nghệ số"
+							loading="lazy">
+						</iframe>
+					</div>
+					<p class="fallback"><a href="https://drive.google.com/file/d/1GchymXNKvLDW8uazP6pxFSfaqoCZRyeu/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Mở PDF trên Google Drive</a></p>
+				</article>
+
+				<article class="product" aria-labelledby="png-title">
+					<div class="product-topline"><span class="product-number">02</span><span class="product-type">Infographic</span></div>
+					<h2 id="png-title">Infographic PNG</h2>
+					<p class="section-note">Tóm tắt trực quan các lợi ích.</p>
+					<div class="frame png">
+						<iframe
+							src="https://drive.google.com/file/d/1pM6GKCO5oFUso1Js4X5-Huf0d_sg9O0q/preview"
+							title="Infographic PNG về lợi ích công nghệ số"
+							loading="lazy">
+						</iframe>
+					</div>
+					<p class="fallback"><a href="https://drive.google.com/file/d/1pM6GKCO5oFUso1Js4X5-Huf0d_sg9O0q/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Mở PNG trên Google Drive</a></p>
+				</article>
+
+				<article class="product" aria-labelledby="video-title">
+					<div class="product-topline"><span class="product-number">03</span><span class="product-type">Video</span></div>
+					<h2 id="video-title">Video YouTube</h2>
+					<p class="section-note">Video ngắn về lợi ích công nghệ số.</p>
+					<div class="frame video">
+						<iframe
+							src="https://www.youtube.com/embed/C32ACiGqbHI"
+							title="Video YouTube về lợi ích công nghệ số"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+							loading="lazy">
+						</iframe>
+					</div>
+					<p class="fallback"><a href="https://youtube.com/shorts/C32ACiGqbHI?si=hu7ChEXOwsdm1-Kl" target="_blank" rel="noopener noreferrer">Xem video trên YouTube</a></p>
+				</article>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>Bản quyền infographic và video thuộc về chủ sở hữu nội dung tương ứng.</p>
+		<p>Trang tổng hợp phục vụ mục đích học tập; nội dung mô tả được biên soạn với sự hỗ trợ của AI.</p>
+	</footer>
+</body>
+</html>
